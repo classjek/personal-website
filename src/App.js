@@ -6,6 +6,10 @@ import { CiSquarePlus, CiSquareMinus, CiUser, CiHome, CiDesktop } from "react-ic
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Projects from './components/pages/Projects';
+import PMA from './components/pages/PMA';
+import Bruinwalk from './components/pages/Bruinwalk';
+import Mobile from './components/pages/Mobile';
+import SpringSing from './components/pages/SpringSing';
 
 // Define Navbar
 function Navbar() {
@@ -21,13 +25,13 @@ function Navbar() {
 
       {isOpen && (
         <div className='flex items-center mx-1'>
-          <Link to="/" className='ml-2 mr-4'>
+          <Link to="/" onClick={()=> setIsOpen(false)} className='ml-2 mr-4'>
             <CiHome size={iconSizeMd}/>
           </Link>
-          <Link to="/projects" className='mr-4'>
+          <Link to="/projects" onClick={()=> setIsOpen(false)} className='mr-4'>
             <CiDesktop size={iconSizeMd}/>
           </Link>
-          <Link to="/about" className='mr-4'>
+          <Link to="/about" onClick={()=> setIsOpen(false)} className='mr-4'>
             <CiUser size={iconSizeMd}/>
           </Link>
         </div>
@@ -45,6 +49,10 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/about" element={<About/>} />
+        <Route path="/picturing-mexican-america" element={<PMA />} />
+        <Route path="/bruinwalk" element={<Bruinwalk />} />
+        <Route path="/mobile-development" element={<Mobile />} />
+        <Route path="/spring-sing" element={<SpringSing />} />
       </Routes>
     </Router>
     </div>
